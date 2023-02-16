@@ -66,12 +66,31 @@ print("Functions with Parameters")
 print("-------------------------------------------------------")
 
 
-def days_to_units(num_of_days):
+def days_to_units(num_of_days, custom_message):
     print(f"{num_of_days} days are {num_of_days * calculation_to_units} {name_of_unit}")
-    print("All good!")
+    print(custom_message)
 
 
-days_to_units(20)   # Less code
-days_to_units(35)   # re
-days_to_units(50)
-days_to_units(110)
+days_to_units(20, "Awesome!")   # Less code
+days_to_units(35, "Looks Good!")   # reduced code duplication
+days_to_units(50, "Yupiee!")   # more descriptive
+days_to_units(110, "cool!")
+
+# Scope
+# A variable is only available from inside the region it is created
+#   - Global Scope = variable available from within any scope
+#   - Local Scope = variables created inside function can only be used inside that function
+print("-------------------------------------------------------")
+print("Scope")
+print("-------------------------------------------------------")
+
+global_variable = "example"
+
+
+def scope_check(num_of_days):
+    my_var = "variable inside function"
+    print(name_of_unit) # Global scope
+    print(num_of_days) # Local scope
+    print(my_var)
+
+scope_check(7)
